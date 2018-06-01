@@ -31,8 +31,9 @@ public class ParserTest {
 
     @Test
     public void parses_commands_with_no_parameters() {
-        Parser parser = parser();
-        parser.parse("Charlie /wall");
+        parser().parse("Charlie /wall");
+        verify(commandService).executeCommand("wall", "");
+        verifyNoMoreInteractions(commandService);
     }
 
     private Parser parser() {
