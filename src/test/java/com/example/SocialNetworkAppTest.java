@@ -27,4 +27,12 @@ public class SocialNetworkAppTest
         new SocialNetworkApp(in, out, parser).run();
         verify(parser).parse("Alice /post What a wonderfully sunny day!");
     }
+
+    @Test
+    public void parse_two_input_lines() throws IOException {
+        in = SocialNetworkAppTest.class.getResourceAsStream("rita_and_bob.txt");
+        new SocialNetworkApp(in, out, parser).run();
+        verify(parser).parse("/Rita share my data");
+        verify(parser).parse("/Bob sell mine to the naughty people");
+    }
 }
