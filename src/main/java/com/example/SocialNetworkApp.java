@@ -2,16 +2,13 @@ package com.example;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.nio.charset.Charset;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.io.LineIterator;
 
-/**
- * Hello world!
- *
- */
 @RequiredArgsConstructor
 public class SocialNetworkApp 
 {
@@ -20,7 +17,13 @@ public class SocialNetworkApp
     private final Parser parser;
 
     public void run() throws IOException {
-        parser.parse(IOUtils.toString(in, "UTF-8"));
+        try {
+            LineIterator it = IOUtils.lineIterator(in, Charset.defaultCharset());
+            while (it.hasNext()) {
+                parser.parse(it.nextLine());
+            }
+        } finally {
+        }
     }
 
     public static void main( String[] args )
