@@ -29,6 +29,12 @@ public class ParserTest {
         verifyNoMoreInteractions(commandService);
     }
 
+    @Test
+    public void parses_commands_with_no_parameters() {
+        Parser parser = parser();
+        parser.parse("Charlie /wall");
+    }
+
     private Parser parser() {
         return new Parser(userService, commandService);
     }
