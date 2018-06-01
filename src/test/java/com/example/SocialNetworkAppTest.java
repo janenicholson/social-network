@@ -1,8 +1,9 @@
 package com.example;
 
-import static org.junit.Assert.assertThat;
+
 import static org.mockito.Mockito.verify;
 
+import java.io.IOException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
@@ -21,10 +22,9 @@ public class SocialNetworkAppTest
     private OutputStream out;
 
     @Test
-    public void parse_single_input_line()
-    {
+    public void parse_single_input_line() throws IOException {
         in = SocialNetworkAppTest.class.getResourceAsStream("alice_input.txt");
-        new SocialNetworkApp(in, out, parser).main(null);
+        new SocialNetworkApp(in, out, parser).run();
         verify(parser).parse("Alice /post What a wonderfully sunny day!");
     }
 }
