@@ -26,6 +26,6 @@ public class SocialNetworkApp {
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        new SocialNetworkApp(System.in, System.out, new Parser(new UserService(), new CommandService()));
     }
 }
