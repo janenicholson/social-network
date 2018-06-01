@@ -1,15 +1,14 @@
 package com.example;
 
-
 import static org.mockito.Mockito.verify;
 
-import java.io.IOException;
 import org.junit.Rule;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
