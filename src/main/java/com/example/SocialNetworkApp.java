@@ -1,10 +1,10 @@
-package social-network;
+package com.example;
 
 /**
  * Hello world!
  *
  */
-public class App 
+public class SocialNetworkApp 
 {
     public static void main( String[] args )
     {
