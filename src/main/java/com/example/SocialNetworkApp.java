@@ -10,8 +10,7 @@ import org.apache.commons.io.IOUtils;
 import org.apache.commons.io.LineIterator;
 
 @RequiredArgsConstructor
-public class SocialNetworkApp 
-{
+public class SocialNetworkApp {
     private final InputStream in;
     private final OutputStream out;
     private final Parser parser;
@@ -26,8 +25,7 @@ public class SocialNetworkApp
         }
     }
 
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+    public static void main(String[] args) {
+        System.out.println("Hello World!");
     }
 }
