@@ -25,7 +25,7 @@ public class ParserTest {
     @Test
     public void executes_do_something_when_called() {
         new Parser(userService, commandService).parse("Alice /do something");
-        verify(commandService).executeCommand("do something");
+        verify(commandService).executeCommand("do", "something");
         verifyNoMoreInteractions(commandService);
     }
 
